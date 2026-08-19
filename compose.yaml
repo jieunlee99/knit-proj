@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: knit-postgres
+    environment:
+      POSTGRES_DB: knit
+      POSTGRES_USER: knit
+      POSTGRES_PASSWORD: knit
+    ports:
+      - "5432:5432"
+    volumes:
+      - knit-postgres-data:/var/lib/postgresql/data
+
+volumes:
+  knit-postgres-data:
